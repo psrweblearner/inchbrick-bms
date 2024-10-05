@@ -1,0 +1,475 @@
+/* =====================================================
+================== Common Used CSS ======================
+======================================================= */
+
+:root{
+    --clr-main:#fcf8ff;
+    --clr-support:#4b2c89;
+    --clr-brand:#4b2c89;
+    --clr-span:orange;
+    --clr-card:#fff;
+    --clr-success:#069747;
+    --clr-danger:#f32b2b;
+    --clr-th:#4041415f;
+    --clr-tbl-even:rgba(17, 17, 26, 0.1);
+    --font-size-xxl:3rem;
+    --font-size-xl:2.5rem;
+    --font-size-md:2rem;
+    --font-size:1.8rem;
+    --font-size-sm:1.4rem;
+    --font-size-xsm:1.2rem;
+    --shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    --p-font-family:"Poppins", system-ui;
+    --h-font-family:"Convergence", system-ui;
+    --side-bar-width-lg:22rem;
+    --side-bar-width-sm:5.5rem;
+    --layout-margin-lg:1rem 1rem 1rem calc(var(--side-bar-width-lg) + 2rem);
+    --layout-margin-sm:1rem 1rem 1rem calc(var(--side-bar-width-sm) + 2rem);
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--h-font-family);
+    font-weight: 500;
+}
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--clr-main);
+}
+p,li,label,a{
+    font-size: var(--font-size-sm);
+    font-family: var(--p-font-family);
+    font-weight: 400;
+}
+a{
+    text-decoration: none;
+}
+.my-5{
+    margin: 2.5rem 0;
+}
+.psr-container{
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.psr-container-full{
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+}
+.psr-grid{
+    display: grid;
+    width: 100%;
+}
+.psr-grid-4-6{
+    grid-template-columns: 40% 60%;
+    align-items: start;
+    
+}
+.psr-grid-6-4{
+    grid-template-columns: 60% 40%;
+    align-items: start;
+    
+}
+.psr-grid-col-1 {
+    grid-template-columns: repeat(1,1fr);
+}
+.psr-grid-col-2{
+    grid-template-columns: repeat(2,1fr);
+    align-items: start;
+}
+.psr-grid-col-4{
+    grid-template-columns: repeat(4,1fr);
+    align-items: start;
+}
+.psr-grid-col-3{
+    grid-template-columns: repeat(3,1fr);
+    align-items: start; 
+}
+
+.gap-1{
+    gap: 1rem;
+}
+.gap-2{
+    gap: 2rem;
+}
+.gap-3{
+    gap: 3rem;
+}
+.w-2 { width: .2rem; }
+.w-5 { width: .5rem; }
+.w-10 { width: 1rem; }
+.w-15 { width: 1.5rem; }
+.w-20 { width: 2rem; }
+.w-25 { width: 2.5rem; }
+.w-50 { width: 5rem; }
+.w-70 { width: 7rem; }
+.w-75 { width: 7.5rem; }
+.w-100 { width: 10rem; }
+/* =====================================================
+================== Common Used CSS END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Navbar Css Only ==================
+======================================================= */
+.psr-nav-response{
+    width: 100%;
+    box-shadow: var(--shadow);  
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.psr-container{
+    padding: var(--space-md);
+    z-index: var(--z-index-navbar);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.psr-navbar-brand a{
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-family: var(--p-font-family);
+    color: var(--clr-brand);
+    text-transform: uppercase;
+}
+.psr-navbar-brand a span{
+    color: var(--clr-span);
+}
+.psr-navbar ul{
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+ }
+ .psr-navbar li a{
+    font-size: var(--font-size);
+    font-family: var(--h-font-family);
+    color: var(--clr-support);
+    position: relative;
+}
+/* =====================================================
+================== Navbar Css END ==================
+======================================================= */
+
+/* =====================================================
+================== Top Header Css END ==================
+======================================================= */
+.psr-top-header{
+    width: 100%;
+    border-radius: 0.375rem;
+    box-shadow:var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    font-size: var(--font-size-md);
+    background: var(--clr-card);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.psr-top-header .psr-top-nav{
+    display: flex;
+    list-style-type: none; 
+    justify-content: flex-end;
+    align-items: center; 
+    gap: 2rem;
+}
+.psr-top-header .psr-top-nav i{
+    cursor: pointer;
+}
+.psr-greeting h4{
+    padding: 0 1.4rem;
+    font-size: var(--font-size-sm);
+}
+.psr-search-bar input{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    background: transparent;
+    width: 100%;
+    font-size: var(--font-size-sm);
+    color: var(--crl-main);
+    padding: 0 1rem;
+}
+.psr-icons{
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    padding: .52rem;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    left: -1rem;
+    top: 1rem;
+}
+/* =====================================================
+================== Top Header Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Side bar Css Only ==================
+======================================================= */
+
+.psr-side-bar{
+    background: var(--clr-card);
+    height: 100vh;
+    position: fixed;
+    transition: all .3s linear;
+    box-shadow: var(--shadow);
+    z-index: 99;
+    white-space: nowrap;
+}
+.psr-sidebar-expanded .psr-side-bar{
+   width: var(--side-bar-width-lg);
+}
+.psr-sidebar-collapsed .psr-side-bar{
+    width: var(--side-bar-width-sm);
+}
+.psr-sidebar-expanded .psr-side-brand a{
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+.psr-sidebar-collapsed .psr-side-brand a{
+    display: none;
+    
+}
+
+.psr-sidebar-expanded .psr-page-content{
+    margin: var(--layout-margin-lg);
+    width: calc(100% - var(--side-bar-width-lg));
+    transition: all .3s linear;
+}
+.psr-sidebar-collapsed .psr-page-content{
+    margin: var(--layout-margin-sm);
+    width: calc(100% - var(--side-bar-width-sm));
+    transition: all .3s linear;
+}
+.psr-side-navbar ul > li.active a{
+    background: var(--clr-main);
+    position: relative;
+}
+.psr-nav-link{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    margin: .5rem;
+}
+
+.psr-sidebar-collapsed .psr-nav-text{
+    opacity: 0;
+}
+.psr-side-navbar ul > li:hover a{
+    background: var(--clr-main);
+    box-shadow: var(--shadow);
+}
+.psr-sidebar-collapsed ul > li:hover a .psr-nav-text{
+    opacity: 1;
+}
+.psr-sidebar-collapsed ul > li:hover .psr-nav-link {
+    width: var(--side-bar-width-lg);
+} 
+.psr-side-navbar ul > li.active a::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-right: 0.4rem solid var(--clr-span);
+}
+.psr-sidebar-expanded ul > li.active a::after{
+    right: -.5rem;
+}
+.psr-sidebar-collapsed ul > li.active a::after{
+    right: -.5rem;
+}
+
+.psr-sidebar-collapsed .psr-side-navbar {
+    margin-top: 5rem;
+}
+.psr-nav-item{
+    list-style: none;
+}
+/* =====================================================
+================== Side bar Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Main Section Css Only ==================
+======================================================= */
+
+.psr-main-body{
+    min-height: 100vh;
+    padding: .35rem;
+}
+
+/* =====================================================
+================== Main Section Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Card Css Only ==================
+======================================================= */
+
+.psr-card{
+    background: var(--clr-card);
+    padding: 1.2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    font-size: var(--font-size-xsm);
+    margin: 1rem;
+    overflow: hidden;
+}
+.psr-card-header{
+    font-size: var(--font-size-md);
+    padding: 1rem;
+}
+.psr-card-header h4{
+    font-size: var(--font-size);
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--clr-brand);
+}
+.psr-page-wraper .psr-grid{
+    gap: 3rem;
+}
+
+.psr-service-img img{
+    width: 100%;
+    height: 8rem;
+    padding: .5rem;
+    object-fit: contain;
+}
+.psr-service-box {
+    background: var(--clr-card);
+    width: 100%;
+    height: 15rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+.psr-service-content{
+    text-align: center;
+    font-size: var(--font-size-sm);
+}
+
+.psr-card-box {
+    background: var(--clr-card);
+    height: 15rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: var(--shadow);
+    gap: 1.5rem;
+    cursor: pointer;
+    padding: .5rem;
+}
+.psr-card-title-wrap{
+    text-align:left;
+}
+.psr-card-icons{
+    background: var(--clr-main);
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: var(--font-size-sm);
+    color: var(--clr-span);
+}
+.psr-card-title{
+    width: 100%;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    line-height: 2;
+}
+.psr-card-count{
+    font-size: var(--font-size);
+    font-weight: 600;
+}
+.psr-count-progress{
+    font-size: var(--font-size-xsm);
+}
+.psr-increase{
+    color: var(--clr-success);
+}
+.psr-decrease{
+    color: var(--clr-danger);
+}
+/* =====================================================
+================== Card Css Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Table Css Only ==================
+======================================================= */
+
+.psr-table {
+    width: 100%;
+}
+
+.psr-table tbody tr:nth-child(even) { 
+    background: var(--clr-tbl-even); 
+}
+
+.psr-table th, .psr-table td {
+    padding: 1rem;
+    text-align: start;
+    font-size: var(--font-size-sm); 
+}
+
+.psr-table th {
+    background-color: var(--clr-th);
+}
+
+.psr-max-5 {
+    max-height: 29rem;
+    overflow: auto;
+    height: 100%;
+}
+
+.psr-table-responsive {
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+/* =====================================================
+================== Table Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== footer Css Only ==================
+======================================================= */
+
+.psr-footer{
+    width: 100%;
+    border-radius: 0.375rem;
+    box-shadow:var(--shadow);
+    padding: 1rem;
+    font-size: var(--font-size-sm);
+    background: var(--clr-card);
+}
+
+/* =====================================================
+================== footer Css END ==================
+======================================================= */

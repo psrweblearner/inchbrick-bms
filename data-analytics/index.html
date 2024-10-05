@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Convergence&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/mediaQuery.css">
+  
+</head>
+<body>
+    <header class="psr-nav-response">
+        <div class="psr-container">
+            <div class="psr-navbar-brand"><a href="/">Inch<span> & </span> Brick</a></div>
+            <nav class="psr-navbar">
+                <ul>
+                    <li class="psr-nav-icons"><a class="psr-nav-link" href="/"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li class="psr-nav-icons"><a class="psr-nav-link" href="/"><i class="fa-solid fa-bullhorn"></i></a></li>
+                    <li class="psr-nav-icons"><a class="psr-nav-link" href="/"><i class="fa-solid fa-user"></i></a></li>
+                    <li class="psr-nav-icons"><a class="psr-nav-link" href="/"><i class="fa-solid fa-power-off"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="psr-geo-chart-section">
+        <div class="psr-container">
+            <div class="psr-grid psr-grid-col-1">
+                <div class="psr-geo">
+                    <div class="psr-card">
+                        <div class="psr-card-header"><h4>Geo Location</h4></div>
+                        <div class="psr-card-body">
+                            <div class="world-map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="psr-chart-section">
+        <div class="psr-container">
+            <div class="psr-grid psr-grid-col-2 gap-1">
+                <div class="psr-card">
+                    <div class="psr-card-header"><h4>Funnel Overview</h4></div>
+                    <div class="psr-card-body">
+                        <div class="funnel-chart"></div>
+                    </div>
+                </div>
+                <div class="psr-card">
+                    <div class="psr-card-header"><h4>Lead Overview</h4></div>
+                    <div class="psr-card-body">
+                        <div class="lead-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+    <script>
+         google.charts.load('current', {
+            'packages':['geochart'],
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+            ['Country', 'Leads'],
+            ['India', 4500],
+            ['United States', 300],
+            ['Brazil', 4000],
+            ['Canada', 5000],
+            ['France', 6000],
+            ['RU', 10000]
+            ]);
+
+            var options = {};
+
+            var chart = new google.visualization.GeoChart(document.querySelector('.world-map'));
+
+            chart.draw(data, options);
+        }
+
+
+        
+        // funnel Chart
+        google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawBar);
+
+      function drawBar() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+
+        var chart = new google.charts.Bar(document.querySelector('.funnel-chart'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+        
+      }
+
+
+    //   lead chart
+
+    google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.querySelector('.lead-chart'));
+        chart.draw(data, options);
+    }
+    </script>
+</body>
+</html>

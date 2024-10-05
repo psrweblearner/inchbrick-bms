@@ -1,0 +1,135 @@
+@media (max-width: 768px){
+    /* =====================================================
+================== Common Used CSS ======================
+======================================================= */
+html{
+    font-size: 50%;
+}
+.psr-grid-4-6, .psr-grid-6-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minimum card width */
+}
+
+.psr-grid-col-2, .psr-grid-col-3, .psr-grid-col-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust based on available space */
+}
+
+/* =====================================================
+================== Common Used CSS END ======================
+======================================================= */
+
+
+/* =====================================================
+================== Navbar Css Only ==================
+======================================================= */
+
+.psr-navbar-brand a{
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    font-family: var(--p-font-family);
+    color: var(--clr-brand);
+    text-transform: uppercase;
+}
+.psr-navbar ul{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+ }
+ .psr-navbar li a{
+    font-size: var(--font-size-sm);
+    font-family: var(--h-font-family);
+    color: var(--clr-support);
+    position: relative;
+}
+/* =====================================================
+================== Navbar Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Top Header Css Only ==================
+======================================================= */
+.psr-search-bar,.psr-greeting h4{
+    display: none;
+}
+
+/* =====================================================
+================== Top Header Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Side bar Css Only ==================
+======================================================= */
+.psr-sidebar-expanded .psr-icons {
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    padding: .52rem;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    z-index: 99;
+}
+.psr-sidebar-expanded .psr-page-content{
+    margin: 0;
+    width: 100%;
+    transition: all .3s linear;
+}
+/* =====================================================
+================== Side bar Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Card Css Only ==================
+======================================================= */
+
+.psr-services,.psr-counts{
+    padding: 2rem;
+}
+/* =====================================================
+================== Card Css Css END ==================
+======================================================= */
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+    /* =====================================================
+================== Top Header Css Only ==================
+======================================================= */
+.psr-greeting h4{
+    display: none;
+}
+
+/* =====================================================
+================== Top Header Css END ==================
+======================================================= */
+
+
+/* =====================================================
+================== Side bar Css Only ==================
+======================================================= */
+.psr-sidebar-expanded .psr-icons {
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    padding: .52rem;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    z-index: 99;
+}
+.psr-sidebar-expanded .psr-page-content{
+    margin: 0;
+    width: 100%;
+    transition: all .3s linear;
+}
+/* =====================================================
+================== Side bar Css END ==================
+======================================================= */
+}
